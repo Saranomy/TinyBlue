@@ -41,7 +41,7 @@ if __name__=='__main__':
     tm = TinyBlue(lcd, num_lines, num_columns)
 
     # led screen
-    item_led_back = Item('Back / LED: ON', is_back_button = True)
+    item_led_back = Item('Back / LED: OFF', is_back_button = True)
     def on_click_toggle_led():
         global led_pin_value
         led_pin_value = (led_pin_value + 1) % 2
@@ -61,7 +61,7 @@ if __name__=='__main__':
     about_screen = Screen([
         Item('Back', is_back_button = True),
         Item('GitHub/Saranomy'),
-        Item('Tiny1602Menu')
+        Item('TinyBlue')
     ])
     tm.add_screen('/about', about_screen)
     
