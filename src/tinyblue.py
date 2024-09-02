@@ -98,6 +98,13 @@ class Screen:
         (Do not need to call this)
         """
         return self.items[self.line_index]
+
+    def reset(self):
+        """
+        (Do not need to call this)
+        """
+        self.top_line = 0
+        self.line_index = 0
     
 class TinyBlue:
     """
@@ -192,6 +199,7 @@ class TinyBlue:
         Go back to previous screen if possible
         """
         if len(self.screen_stack) > 1:
+            self.top_screen().reset()
             self.screen_stack.pop()
             if self.auto_render:
                 self.render()
