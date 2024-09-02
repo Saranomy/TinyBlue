@@ -12,6 +12,8 @@ This project is built on top of https://github.com/dhylands/python_lcd
 
 *Jump into LED menu and select Toggle 2 times, then go Back*
 
+Try the demo simulator [here](https://wokwi.com/projects/407891756643924993)
+
 #### Problem
 Interacting with extensive live data on a 16x2 character LCD can be challenging due to limited display space.
 
