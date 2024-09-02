@@ -211,8 +211,21 @@ tb.add_screen(path = '/', screen_main)
 2. Open [Thonny](https://thonny.org/), and connect to the Pi Pico
 3. Upload `lcd_api.py` and `machine_i2c_lcd.py` from this [repository](https://github.com/dhylands/python_lcd/tree/master/lcd)
 4. Upload `tinyblue.py` and `example_tinyblue.py`
-5. Open `example_tinyblue.py` on Thonny and run it
+5. Open `example_tinyblue.py` on Thonny and check on the pins
 
+```python
+...
+# setup display and pins
+i2c = I2C(0, scl = Pin(17), sda = Pin(16), freq = 400000)
+i2c_devices = i2c.scan()
+lcd = I2cLcd(i2c, i2c_devices[0], 2, 16)
+
+scroll = Pin(6, Pin.IN, Pin.PULL_UP)
+select = Pin(13, Pin.IN, Pin.PULL_UP)
+...
+```
+
+6. Run it
 ## License
 
 The source code for the site is licensed under the MIT license, which you can find in the LICENSE file.
